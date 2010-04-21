@@ -9,6 +9,7 @@
 		"pintura/": "jar:http://github.com/kriszyp/pintura/zipball/master!/lib/",
 		"wiky/": "jar:http://github.com/kriskowal/wiky/zipball/master!/lib/",
 		"narwhal/": "jar:http://github.com/kriszyp/narwhal/zipball/master!/lib/",
+		"jack/": "jar:http://github.com/kriszyp/jack/zipball/master!/lib/jack/",
 		"transporter/": "jar:http://github.com/kriszyp/transporter/zipball/master!/lib/",
 		"^jsgi-node$": "jar:http://github.com/kriszyp/jsgi-node/zipball/master!/lib/jsgi-node",
 		"^model$": "jar:http://github.com/kriszyp/perstore/zipball/master!/lib/model",
