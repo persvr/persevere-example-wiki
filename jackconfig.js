@@ -17,7 +17,9 @@ require("app");
 // setup the Jack application
 exports.app =
 	// this will provide module wrapping for the server side CommonJS libraries for the client
-	transporter.Transporter({}, 
+	transporter.Transporter({loader: function(id){
+		return require.loader.loader.fetch(require.loader.resolvePkg(id.substring(0, id.length - 3),"","","")[0]);
+	}}, 
 		// make the root url redirect to /Page/Root  
 		require("pintura/jsgi/redirect-root").RedirectRoot(
 		 	// main Pintura handler 
