@@ -5,7 +5,8 @@ try{
 	var pintura = require("pintura/pintura");
 }catch(e){
 	// old loaders need to use this type of access, pintura will fix things from there 
-	pintura = require("pintura");
+	require("./lib/util/narwhal-compat");
+	pintura = require("pintura/pintura");
 }
 
 var File = require("file"),
