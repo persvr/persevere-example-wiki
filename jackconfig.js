@@ -18,6 +18,9 @@ require("app");
 exports.app =
 	// this will provide module wrapping for the server side CommonJS libraries for the client
 	transporter.Transporter({loader: function(id){
+		if(id.match(/-engine/)){
+			id = "../engines/default/lib/" + id;
+		}
 		return require.loader.loader.fetch(require.loader.resolvePkg(id.substring(0, id.length - 3),"","","")[0]);
 	}}, 
 		// make the root url redirect to /Page/Root  
@@ -27,6 +30,9 @@ exports.app =
 		)
 	);
 
+
+var perseverePath = require("packages").resource("public/explorer.html").toString();
+perseverePath = perseverePath.substring(0, perseverePath.length - "/explorer.html".length).replace(/\\/,'/');
 // now setup the development environment, handle static files before reloading the app
 // for better performance
 exports.development = function(app, options){
@@ -40,6 +46,8 @@ exports.development = function(app, options){
 		}),*/
 		// the main place for static files accessible from the web
 		require("jack/static").Static(null, {urls:[""],root:"public"}),
+		require("jack/static").Static(null, {urls:["/explorer"],root:perseverePath}),
+		require("jack/static").Static(null, {urls:["/js/dojo-persevere"],root:perseverePath}),
 		// the typical reloader scenario
 		(!options || options.reload) ? require("jack/reloader").Reloader(File.join(File.cwd(), "jackconfig"), "app") :
 								exports.app
