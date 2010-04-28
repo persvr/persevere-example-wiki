@@ -4,7 +4,7 @@ all dependencies will be automatically resolved, or you can also use the nightly
 build that bundles with Narwhal. Once installed, you can download this package and from
 the root folder simply run:
 
-    node /path/to/nodules
+    node /path/to/nodules.js
     
 or for Narwhal:
 
