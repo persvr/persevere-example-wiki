@@ -29,9 +29,20 @@
 			<iframe name="upload-target" style="display:none"></iframe>
 		</form>
 		<script>
+			// Configure RequireJS
 			require = {baseUrl: "lib/"};
 		</script>
-		<script src="http://requirejs.org/docs/release/0.9.0/minified/require.js"></script>
+		<!-- You can use RequireJS or Yabble (obviously you should download this and have it available locally) -->
+		<script src="http://requirejs.org/docs/release/0.10.0/minified/require.js"></script>
+		<script src="http://github.com/jrburke/requirejs/raw/master/require/transportD.js"></script>
+		<!--<script src="http://github.com/jbrantly/yabble/raw/master/lib/yabble.js"></script>-->
+		<script>
+			if(require.setModuleRoot){
+				// Configure Yabble
+				require.setModuleRoot("lib/");
+				require.useScriptTags();
+			}
+		</script>
 		<script src="lib/edit.js"></script>
 	</body>
 </html>
