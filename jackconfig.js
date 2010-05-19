@@ -31,8 +31,13 @@ exports.app =
 	);
 
 
-var perseverePath = require("packages").resource("public/explorer.html").toString();
-perseverePath = perseverePath.substring(0, perseverePath.length - "/explorer.html".length).replace(/\\/,'/');
+var perseverePath;
+require.paths.forEach(function(path){
+	var path = path.match(/(.*)\/persevere\/lib$/);
+	if(path){
+		perseverePath = path[1] + "/persevere/public";
+	}
+});
 // now setup the development environment, handle static files before reloading the app
 // for better performance
 exports.development = function(app, options){
