@@ -13,7 +13,6 @@ var File = require("file"),
 	transporter = require("pintura/jsgi/transporter");
 
 require("app");
-
 // setup the Jack application
 exports.app =
 	// this will provide module wrapping for the server side CommonJS libraries for the client
@@ -57,10 +56,7 @@ exports.development = function(app, options){
 	]);
 };
 
-// setup message distribution
-["Jack worker 0", "Jack worker 1", "Jack worker 2", "Jack worker 3", "Jack worker 4"].forEach(function(workerName){
-	require("tunguska/connector").WorkerConnector(workerName);
-});
+require("pintura/util/jack-connector").observe("worker", pintura.app.addConnection);
 
 // we start the REPL (the interactive JS console) because it is really helpful
 new (require("worker").SharedWorker)("narwhal/repl");
