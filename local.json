@@ -1,4 +1,6 @@
 {
+	"processes": 4,
+	"port": 8080,
 	"database": {
 		"connection":"jdbc:mysql://localhost/wiki?user=root&password=&useUnicode=true&characterEncoding=utf-8&autoReconnect=true",
 		"type": "mysql",
@@ -11,6 +13,6 @@
 		"defaultFrom": "app@site.com"
 	},
 	"bypassSecurity": true,
-	"admins":["admin"],
+	"admins":["kris"],
 	"dataFolder": "data"
 }
