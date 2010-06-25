@@ -1,5 +1,7 @@
 {
-	"processes": 4,
+	"//processes": "For production, you would normally want the number of processes to match the number of cores, but for debugging, using 1 is much easier:",
+	"processes": 1,
+	"//port": "This is the HTTP port to listen on:",
 	"port": 8080,
 	"database": {
 		"connection":"jdbc:mysql://localhost/wiki?user=root&password=&useUnicode=true&characterEncoding=utf-8&autoReconnect=true",
