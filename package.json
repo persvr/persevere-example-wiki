@@ -7,6 +7,7 @@
 		"perstore": "jar:http://github.com/kriszyp/perstore/zipball/master!/lib/",
 		"commonjs-utils": "jar:http://github.com/kriszyp/commonjs-utils/zipball/master!/lib/",
 		"pintura": "jar:http://github.com/kriszyp/pintura/zipball/master!/lib/",
+		"persevere-client": "jar:http://github.com/kriszyp/persevere/zipball/master!/public/",
 		"wiky": "jar:http://github.com/kriskowal/wiky/zipball/master!/lib/",
 		"narwhal": "jar:http://github.com/kriszyp/narwhal/zipball/master!/lib/",
 		"jack": "jar:http://github.com/kriszyp/jack/zipball/master!/lib/jack/",
