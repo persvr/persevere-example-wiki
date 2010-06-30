@@ -56,7 +56,7 @@ exports.development = function(app, options){
 	]);
 };
 
-require("pintura/util/jack-connector").observe("worker", pintura.app.addConnection);
+require("tunguska/jack-connector").observe("worker", pintura.app.addConnection);
 
 // we start the REPL (the interactive JS console) because it is really helpful
 new (require("worker").SharedWorker)("narwhal/repl");
