@@ -10,7 +10,7 @@ try{
 }
 
 var File = require("file"),
-	transporter = require("pintura/jsgi/transporter");
+	transporter = require("transporter/jsgi/transporter");
 
 require("app");
 // setup the Jack application
