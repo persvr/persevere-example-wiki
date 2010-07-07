@@ -17,8 +17,8 @@ require("app");
 exports.app =
 	// this will provide module wrapping for the server side CommonJS libraries for the client
 	transporter.Transporter({loader: function(id){
-		if(id.match(/-engine/)){
-			id = "../engines/default/lib/" + id;
+		if(id.match(/promised-io/)){
+			id = id.replace(/promised-io\/http-client/,'http-client');
 		}
 		return require.loader.loader.fetch(require.loader.resolvePkg(id.substring(0, id.length - 3),"","","")[0]);
 	}}, 
