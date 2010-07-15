@@ -23,7 +23,7 @@
 		"//": "Bypass security for initial setup",
 		"bypass": true,
 		"//": "List of admins",
-		"admins":["admin"],
+		"admins":["admin"]
 	},
 	"//": "Default location of data",
 	"dataFolder": "data"
