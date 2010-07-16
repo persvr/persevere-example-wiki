@@ -1,0 +1,20 @@
+#content li {
+	list-style: inherit;
+}
+
+#content ul {
+	list-style: disc;
+}
+
+#content ol,
+#content ul {
+	padding-left: 30px;
+}
+
+#content strong {
+	font-weight: bold;
+}
+
+#content em {
+	font-style: italic;
+}

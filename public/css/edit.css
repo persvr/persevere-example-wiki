@@ -19,3 +19,17 @@
 	width: 640px;
 	height: 480px;
 }
+
+#login-form {
+	text-align: right;
+}
+
+#login-form button,
+#login-form input {
+	margin: 4px 0 0;
+}
+
+#login-form label {
+	display: inline-block;
+	width: 55px;
+}
