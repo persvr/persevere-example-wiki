@@ -21,6 +21,7 @@
 		"model": "jar:http://github.com/kriszyp/perstore/zipball/master!/lib/model.js",
 		"facet": "jar:http://github.com/kriszyp/perstore/zipball/master!/lib/facet.js",
 		"media": "jar:http://github.com/kriszyp/pintura/zipball/master!/lib/media.js",
-		"json": "jar:http://github.com/kriszyp/narwhal/zipball/master!/engines/default/lib/json.js"
+		"json": "jar:http://github.com/kriszyp/narwhal/zipball/master!/engines/default/lib/json.js",
+		"mongodb": "jar:http://github.com/christkv/node-mongodb-native/zipball/master!/lib/mongodb/"
 	}
 }
