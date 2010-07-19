@@ -1,10 +1,9 @@
 <html>
 	<head>
 		<title>Editing content</title>
-		<style type="text/css">
-			@import "css/edit.css";
-			@import "css/common.css";
-		</style>
+
+		<link rel="stylesheet" href="css/edit.css">
+		<link rel="stylesheet" href="css/common.css">
 	</head>
 	<body>
         <div id="headerContainer">
@@ -18,14 +17,14 @@
 
 
 		<div id="login-form">
-			<label>Name:</label><input id="user" type="text" /><br />
-			<label>Password:</label><input id="password" type="password" /><br />
+			<label for="user">Name:</label><input id="user" type="text" /><br />
+			<label for="password">Password:</label><input id="password" type="password" /><br />
 			<button id="sign-in">Sign in</button>
 			<button id="register">Register</button>
 		</div>
 		<form id="upload-form" method="POST" enctype="multipart/form-data" target="upload-target" action="/Page/Example">
 			<label>Image to upload:</label><input type="file" name="image"/><br />
-			<button>Upload</input>
+			<button>Upload</button>
 			<iframe name="upload-target" style="display:none"></iframe>
 		</form>
 		<script>
