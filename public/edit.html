@@ -27,20 +27,24 @@
 			<button>Upload</button>
 			<iframe name="upload-target" style="display:none"></iframe>
 		</form>
+		<!-- You can use RequireJS or Yabble (obviously you should download this and have it available locally) -->
+<!--	
+		RequireJS:
 		<script>
 			// Configure RequireJS
 			require = {baseUrl: "lib/"};
 		</script>
-		<!-- You can use RequireJS or Yabble (obviously you should download this and have it available locally) -->
 		<script src="http://requirejs.org/docs/release/0.11.0/minified/transportD-require.js"></script>
-		<!--<script src="http://github.com/jbrantly/yabble/raw/master/lib/yabble.js"></script>-->
+		Or Yabble:
+		<script src="http://github.com/jbrantly/yabble/raw/master/lib/yabble.js"></script>
 		<script>
 			if(require.setModuleRoot){
 				// Configure Yabble
 				require.setModuleRoot("lib/");
 				require.useScriptTags();
 			}
-		</script>
+		</script>-->
+		<script src="lib/transporter/loader.js"></script>
 		<script src="lib/edit.js"></script>
 	</body>
 </html>
