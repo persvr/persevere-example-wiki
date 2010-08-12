@@ -30,11 +30,15 @@ exports.app =
 	);
 
 
-var perseverePath;
-var path = require.paths[0].match(/(.*?)\/packages\//);
+var perseverePath, 
+	Static = require("jack/static").Static,
+	Directory = require("jack/dir").Directory;
+	
+var path = require.paths[0].match(/(.*?)[\/\\]packages[\/\\]/);
 if(path){
 	perseverePath = path[1] + "/packages/persevere/public";
 }
+
 // now setup the development environment, handle static files before reloading the app
 // for better performance
 exports.development = function(app, options){
@@ -47,9 +51,9 @@ exports.development = function(app, options){
 			converter: transporter.Dojo
 		}),*/
 		// the main place for static files accessible from the web
-		require("jack/static").Static(null, {urls:[""],root:"public"}),
-		require("jack/static").Static(null, {urls:["/explorer"],root:perseverePath}),
-		require("jack/static").Static(null, {urls:["/js/dojo-persevere"],root:perseverePath}),
+		Directory("public", Static(null, {urls:[""], root: "public"})),
+		Static(null, {urls:["/explorer"], root: perseverePath + "/explorer"}),
+		Static(null, {urls:["/js/dojo-persevere"], root: perseverePath}),
 		// the typical reloader scenario
 		(!options || options.reload) ? require("jack/reloader").Reloader(File.join(File.cwd(), "jackconfig"), "app") :
 								exports.app
@@ -60,4 +64,3 @@ require("tunguska/jack-connector").observe("worker", pintura.app.addConnection);
 
 // we start the REPL (the interactive JS console) because it is really helpful
 new (require("worker").SharedWorker)("narwhal/repl");
-
