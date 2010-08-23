@@ -13,7 +13,8 @@
 			<div id="user-name"></div>
 			<textarea id="content-area"></textarea>
 			<button id="save-button">Save</button>
-        </div>
+			<button id="insert-image">Insert Image</button>
+        </>
 
 
 		<div id="login-form">
@@ -22,10 +23,10 @@
 			<button id="sign-in">Sign in</button>
 			<button id="register">Register</button>
 		</div>
-		<form id="upload-form" method="POST" enctype="multipart/form-data" target="upload-target" action="/Page/Example">
+		<form id="upload-form" method="POST" enctype="multipart/form-data" target="upload-target" action="/File/">
 			<label>Image to upload:</label><input type="file" name="image"/><br />
 			<button>Upload</button>
-			<iframe name="upload-target" style="display:none"></iframe>
+			<iframe name="upload-target" id="upload-target" style="display:none"></iframe>
 		</form>
 		<!-- You can use RequireJS or Yabble (obviously you should download this and have it available locally) -->
 <!--	
