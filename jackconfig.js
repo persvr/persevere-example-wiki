@@ -2,9 +2,10 @@
  * The starting point for Pintura running as a Jack app.
  */
 var pinturaApp;
-require("nodules").useLocal().ensure(["pintura/pintura", "tunguska/jack-connector"], function(require){
+require("nodules").useLocal().ensure(["pintura/pintura", "app", "tunguska/jack-connector"], function(require){
 	require.reloadable(function(){
 		pinturaApp = require("pintura/pintura").app;
+		require("app");
 	});
 	require("tunguska/jack-connector").observe("worker", pinturaApp.addConnection);
 	// we start the REPL (the interactive JS console) because it is really helpful
@@ -26,7 +27,9 @@ if(path){
 // now setup the development environment, handle static files before reloading the app
 // for better performance
 exports.app = exports.development = function(app, options){
-	return require("jack/cascade").Cascade([
+	// make the root url redirect to /Page/Root  
+	return require("jsgi/redirect-root").RedirectRoot(
+		require("jack/cascade").Cascade([
 			// cascade from static to pintura REST handling
 /*		// this will provide module wrapping for the Dojo modules for the client
 		transporter.Transporter({
@@ -39,12 +42,11 @@ exports.app = exports.development = function(app, options){
 		Static(null, {urls:["/explorer"], root: perseverePath + "/explorer"}),
 		// this will provide access to the server side JS libraries from the client
 		Transporter({loader: require("nodules").forEngine("browser").useLocal().getModuleSource}),
-		// make the root url redirect to /Page/Root  
-		require("jsgi/redirect-root").RedirectRoot(
+		
 		 	// main Pintura handler 
 			function(request){
 				return pinturaApp(request);
 			}
-		)
-	]);
+		])
+	);
 };
