@@ -2,14 +2,16 @@
  * The starting point for Pintura running as a Jack app.
  */
 var pinturaApp;
-require("nodules").useLocal().ensure(["pintura/pintura", "app", "tunguska/jack-connector"], function(require){
+require("nodules").useLocal().ensure(["pintura/pintura", "app", "tunguska/jack-connector", "narwhal/narwhal/repl"], function(require){
 	require.reloadable(function(){
 		pinturaApp = require("pintura/pintura").app;
 		require("app");
 	});
 	require("tunguska/jack-connector").observe("worker", pinturaApp.addConnection);
 	// we start the REPL (the interactive JS console) because it is really helpful
-	new (require("worker").SharedWorker)("narwhal/repl");
+	if(require("jack/handler/simple-worker").options.firstWorker){
+		require("narwhal/narwhal/repl").repl(true);
+	}
 });
 
 var File = require("file"),
