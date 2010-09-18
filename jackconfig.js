@@ -30,7 +30,7 @@ if(path){
 // for better performance
 exports.app = exports.development = function(app, options){
 	// make the root url redirect to /Page/Root  
-	return require("jsgi/redirect-root").RedirectRoot(
+	return require("./lib/jsgi/redirect-root").RedirectRoot(
 		require("jack/cascade").Cascade([
 			// cascade from static to pintura REST handling
 /*		// this will provide module wrapping for the Dojo modules for the client
