@@ -1,8 +1,16 @@
 <html>
-	<head>
-		<title>{{$data}} Not Found</title>
-	</head>
+	<title>{{pageName}}</title> 
+	<link rel="stylesheet" href="/css/common.css" /> 
+	<link rel="stylesheet" href="/css/wikiContent.css" /> 
+	<script src="/lib/transporter/receiver.js"></script> 
+	<script src="/lib/monitor.js"></script>
 	<body>
-		<h1>Custom 404 Page</h1>
+		<div id="headerContainer"><span class="pageName">{{pageName}}<span></div> 
+		<div id="content"> 
+			<p>This page does not yet exist. Click below to create the page.</p>
+		</div>
+		<div id="action">
+			<a href="/edit.html?page={{pageName}}">Create this page</a>
+		</div>
 	</body>
-</html>
+</html> 

@@ -7,7 +7,7 @@
 	<body>
 		<div id="headerContainer"><span class="pageName">{{pageName}}<span></div> 
 		<div id="content"> 
-			<p>{{require("wiky").toHtml(content)}}</p>
+			<p>{{content}}</p>
 		</div>
 		<div id="action">
 			<a href="/edit.html?page={{pageName}}">Edit this page</a>
