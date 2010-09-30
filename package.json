@@ -8,6 +8,7 @@
 		"commonjs-utils": "http://github.com/kriszyp/commonjs-utils/zipball/v0.2.1",
 		"pintura": "http://github.com/kriszyp/pintura/zipball/v0.2.1",
 		"promised-io": "http://github.com/kriszyp/promised-io/zipball/v0.2.1",
+		"templify": "http://github.com/dmachi/templify/zipball/master",
 		"patr": "http://github.com/kriszyp/patr/zipball/v0.2.1",
 		"rql": "http://github.com/kriszyp/rql/zipball/v0.2.1",
 		"persevere-client": "jar:http://github.com/kriszyp/persevere/zipball/master!/public/",
