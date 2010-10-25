@@ -4,7 +4,7 @@
 	"dependencies": ["persevere"],
 	"contributors": [],
 	"mappings":{
-		"perstore": "http://github.com/kriszyp/perstore/zipball/v0.2.1",
+		"perstore": "http://github.com/kriszyp/perstore/zipball/v0.2.2",
 		"commonjs-utils": "http://github.com/kriszyp/commonjs-utils/zipball/v0.2.1",
 		"pintura": "http://github.com/kriszyp/pintura/zipball/v0.2.3",
 		"promised-io": "http://github.com/kriszyp/promised-io/zipball/v0.2.1",
