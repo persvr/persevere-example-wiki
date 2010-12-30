@@ -4,7 +4,7 @@
 	"dependencies": ["persevere"],
 	"contributors": [],
 	"mappings":{
-		"perstore": "http://github.com/kriszyp/perstore/zipball/v0.2.3",
+		"perstore": "http://github.com/kriszyp/perstore/zipball/v0.2.4",
 		"commonjs-utils": "http://github.com/kriszyp/commonjs-utils/zipball/v0.2.2",
 		"pintura": "http://github.com/kriszyp/pintura/zipball/v0.2.4",
 		"docjs": "http://github.com/kriszyp/docjs/zipball/master",
@@ -16,7 +16,6 @@
 		"wiky": "http://github.com/kriskowal/wiky/zipball/master",
 		"narwhal": "http://github.com/kriszyp/narwhal/zipball/master",
 		"jack": "jar:http://github.com/kriszyp/jack/zipball/master!/lib/jack/",
-		"ws":"http://github.com/kriszyp/node-websocket-server/zipball/v1.3.50",
 		"transporter": "http://github.com/kriszyp/transporter/zipball/v0.2.2",
 		"jsgi-node": "jar:http://github.com/kriszyp/jsgi-node/zipball/v0.2.2!/lib/jsgi-node.js",
 		"multi-node": "http://github.com/kriszyp/multi-node/zipball/v0.2.2",
