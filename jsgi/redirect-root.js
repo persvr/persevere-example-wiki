@@ -1,4 +1,4 @@
-var redirector = require("jack/redirect").Redirect("/Page/Example");
+var redirector = require("./redirect").Redirect("/Page/Example");
 exports.RedirectRoot = function(app){
 	return function(request){
 		if(request.pathInfo == "/"){
