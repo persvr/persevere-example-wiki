@@ -12,21 +12,22 @@ var Transporter, pinturaApp;
 			require("pintura/pintura").app;
 		require("./app");
 	//});
-	require("tunguska/jack-connector").observe("worker", pinturaApp.addConnection);
+//	require("tunguska/jack-connector").observe("worker", pinturaApp.addConnection);
 	// we start the REPL (the interactive JS console) because it is really helpful
-	if(require("jack/lib/jack/handler/simple-worker").options.firstWorker){
-		require("narwhal/lib/narwhal/repl").repl(true);
-	}
-		
+
+if(require.main == module){
+    var server = new (require("ringo/httpserver").Server)({appName: "app", appModule: module.id});
+    server.getContext("/public").serveStatic("public");
+    server.getContext("/packages").serveStatic("C:/packages");
+    server.start();
+}
 	
 //});
-
-var File = require("file");
 	
 
-var perseverePath, 
-	Static = require("jack/static").Static,
-	Directory = require("jack/dir").Directory;
+var perseverePath;/*, 
+	Static = require("jack/lib/jack/static").Static,
+	Directory = require("jack/lib/jack/dir").Directory;*/
 	
 var path = require.paths[0].match(/(.*?)[\/\\]packages[\/\\]/);
 if(path){
@@ -35,10 +36,10 @@ if(path){
 
 // now setup the development environment, handle static files before reloading the app
 // for better performance
-exports.app = exports.development = function(app, options){
+//exports.app = exports.development = function(app, options){
 	// make the root url redirect to /Page/Root  
-	return require("./lib/jsgi/redirect-root").RedirectRoot(require("jack/redirect").Redirect, 
-		require("jack/cascade").Cascade([
+	//require("./jsgi/redirect-root").RedirectRoot(require("jack/lib/jack/redirect").Redirect, 
+exports.app = 
 			// cascade from static to pintura REST handling
 /*		// this will provide module wrapping for the Dojo modules for the client
 		transporter.Transporter({
@@ -47,12 +48,13 @@ exports.app = exports.development = function(app, options){
 			converter: transporter.Dojo
 		}),*/
 		// the main place for static files accessible from the web
-		Directory("public", Static(null, {urls:[""], root: "public"})),
-		Static(null, {urls:["/explorer"], root: perseverePath + "/explorer"}),
+		//require('ringo/middleware/static').middleware(module.resolve('public')),
+		//Directory("public", Static(null, {urls:[""], root: "public"})),
+		//Static(null, {urls:["/explorer"], root: perseverePath + "/explorer"}),
 	 	// main Pintura handler 
 		function(request){
+			print("request" + request);
 			return pinturaApp(request);
 		}
-		])
-	);
-};
+		;
+

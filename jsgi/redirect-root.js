@@ -1,5 +1,3 @@
-exports.RedirectRoot = function(Redirect, app){
-//	var redirector = Redirect("/Page/Example");
 var redirector = require("./redirect").Redirect("/Page/Example");
 exports.RedirectRoot = function(app){
 	return function(request){
@@ -8,5 +6,4 @@ exports.RedirectRoot = function(app){
 		}
 		return app(request);
 	};
-};
 };

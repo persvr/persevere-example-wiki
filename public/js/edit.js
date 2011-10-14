@@ -1,14 +1,15 @@
+define(function(require){
 var JSON = require("commonjs-utils/json");
 
 pageName = location.search.match(/page=([^&]+)/);
 pageName = decodeURIComponent(pageName && pageName[1]);
-require("monitor");
+require("./monitor");
 
 document.title = "Editing " + pageName;
 var request = require("promised-io/http-client").request;
 document.getElementById("main-header").innerHTML = escapeHTML("Editing " + pageName);
 request({
-	url: "Page/" + pageName,
+	url: "/Page/" + pageName,
 	headers: {
 		"accept": "application/javascript, application/json"
 	}
@@ -74,7 +75,7 @@ function login(){
 
 function userRpc(method, params){
 	return request({
-		url: "User/",
+		url: "/User/",
 		method: "POST",
 		body: JSON.stringify({
 			id:"call-id",
@@ -104,3 +105,4 @@ function escapeHTML(html){
 	return html.replace(/&/g, "&amp;")
 		.replace(/</g, "&lt;");
 }
+});

@@ -28,16 +28,19 @@
 			<button>Upload</button>
 			<iframe name="upload-target" id="upload-target" style="display:none"></iframe>
 		</form>
-		<!-- You can use RequireJS or Yabble (obviously you should download this and have it available locally) -->
-<!--
-		RequireJS:
 		<script>
 			// Configure RequireJS
-			require = {baseUrl: "lib/"};
-		</script>-->
-		<!--<script src="require.js"></script>-->
+			require = {
+				baseUrl: "../packages/",
+				paths: {
+					example: "../public/js/"
+				}
+			};
+		</script>
 		
-		<script src="lib/transporter/receiver.js"></script>
-		<script src="lib/edit.js"></script>
+		<script src="../packages/requirejs/require.js"></script>
+		<script>
+			require(["example/edit"]);
+		</script>
 	</body>
 </html>

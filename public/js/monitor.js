@@ -1,3 +1,4 @@
+define(function(require){
 var JSON = require("commonjs-utils/json"),
 	request = require("promised-io/http-client").request;
 	
@@ -33,3 +34,4 @@ function monitor(){
 	});
 }
 setTimeout(monitor, 1000);
+});

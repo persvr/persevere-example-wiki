@@ -1,16 +1,16 @@
 <html>
 	<title>{{pageName}}</title> 
-	<link rel="stylesheet" href="/css/common.css" /> 
-	<link rel="stylesheet" href="/css/wikiContent.css" /> 
-	<script src="/lib/transporter/receiver.js"></script> 
-	<script src="/lib/monitor.js"></script>
+	<link rel="stylesheet" href="/public/css/common.css" /> 
+	<link rel="stylesheet" href="/public/css/wikiContent.css" /> 
+	<script src="/packages/requirejs/require.js"></script> 
+	<script src="/packages/example/monitor.js"></script>
 	<body>
 		<div id="headerContainer"><span class="pageName">{{pageName}}<span></div> 
 		<div id="content"> 
 			<p>{{content}}</p>
 		</div>
 		<div id="action">
-			<a href="/edit.html?page={{pageName}}">Edit this page</a>
+			<a href="/public/edit.html?page={{pageName}}">Edit this page</a>
 		</div>
 	</body>
 </html> 

@@ -1,4 +1,9 @@
-var uri = require("url");
+try{
+	var uri = require("url");
+}catch(e){
+	var uri = require("narwhal/lib/uri");
+	
+} 
 
 exports.Redirect = function (path, status) {
     

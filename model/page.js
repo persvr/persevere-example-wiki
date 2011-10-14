@@ -29,7 +29,7 @@ pageStore = require("store/full-text").FullText(pageStore, "Page");
 */
 
 // to add events
-originalPageStore = pageStore;
+var originalPageStore = pageStore;
 pageStore = Notifying(Inherited(pageStore));
 exports.PageSuper = PageSuper = Model(Inherited(originalPageStore));
 
@@ -68,7 +68,6 @@ Page = exports.Page = Model(pageStore, {
 		return page;
 	},
 	put: function(page, options){ // handle puts to add to history and define attribution
-		print("put called");
 		page.lastModifiedBy = promiseModule.currentContext.currentUser;
 		page.status = "published";
 		// do the default action of saving to the store
