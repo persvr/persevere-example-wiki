@@ -2,8 +2,20 @@
 	<title>{{pageName}}</title> 
 	<link rel="stylesheet" href="/public/css/common.css" /> 
 	<link rel="stylesheet" href="/public/css/wikiContent.css" /> 
+	<script>
+		// Configure RequireJS
+		require = {
+			baseUrl: "../packages/",
+			paths: {
+				example: "../public/js/"
+			}
+		};
+	</script>	
 	<script src="/packages/requirejs/require.js"></script> 
-	<script src="/packages/example/monitor.js"></script>
+	<script>
+		require(["example/monitor"]);
+	</script>
+	
 	<body>
 		<div id="headerContainer"><span class="pageName">{{pageName}}<span></div> 
 		<div id="content"> 
