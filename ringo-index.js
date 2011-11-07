@@ -3,14 +3,22 @@
  */
 
 var pinturaApp =	// the main app
-		require("pintura/pintura").app;
+		require("pintura/pintura").app,
+	settings = require("commonjs-utils/settings");
 require("./app");
 
 if(require.main == module){
-    var server = new (require("ringo/httpserver").Server)({appName: "app", appModule: module.id});
+    var server = new (require("ringo/httpserver").Server)({
+    	appName: "app", 
+    	appModule: module.id,
+    	port: settings.port
+    });
     server.getContext("/public").serveStatic("public");
     server.getContext("/packages").serveStatic("C:/packages");
     server.start();
+	if(settings.repl){
+		require("ringo/shell").start();
+	}
 }
 
 exports.app = 
