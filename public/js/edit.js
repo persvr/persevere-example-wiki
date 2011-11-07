@@ -39,9 +39,13 @@ request({
 				"accept": "application/javascript, application/json",
 				"content-type": "application/json"
 			}
-		}).then(function(){
-			// redirect to the page once it is saved
-			location = "/Page/" + pageName;
+		}).then(function(response){
+			if(response.status >= 400){
+				errorHandler(response.body);
+			}else{
+				// redirect to the page once it is saved
+				location = "/Page/" + pageName;
+			}
 		}, errorHandler);
 	};
 
