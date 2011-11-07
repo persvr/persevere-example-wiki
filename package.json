@@ -20,11 +20,17 @@
 		"multi-node": "http://github.com/kriszyp/multi-node/zipball/v0.2.2!/",
 		"tunguska": "http://github.com/kriszyp/tunguska/zipball/v0.2.3!/"
 	},
+    "maintainers": [
+      {
+  		"name": "Kris Zyp",
+  		"email": "kriszyp@gmail.com"
+  	  }
+    ],
 	"dependencies": {
 		"pintura": ">=0.2.6",
 		"promised-io": ">=0.2.2",
 		"commonjs-utils": ">=0.2.2",
 		"multi-node": ">=0.2.3",
-		"transporter": ">=0.0.1"
+		"wiky": ">=0.95.1"
 	}
 }
