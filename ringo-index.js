@@ -1,16 +1,10 @@
 /**
- * The starting point for Pintura running as a Jack app.
+ * The starting point for Pintura running as a Ringo app.
  */
 
-var Transporter, pinturaApp;
-	Transporter = require("transporter/jsgi/transporter").Transporter;
-		pinturaApp = //Transporter({loader: require("nodules").forEngine("browser").useLocal().getModuleSource},
-			// the main app
-			require("pintura/pintura").app;
-		require("./app");
-	//});
-//	require("tunguska/jack-connector").observe("worker", pinturaApp.addConnection);
-	// we start the REPL (the interactive JS console) because it is really helpful
+var pinturaApp =	// the main app
+		require("pintura/pintura").app;
+require("./app");
 
 if(require.main == module){
     var server = new (require("ringo/httpserver").Server)({appName: "app", appModule: module.id});
