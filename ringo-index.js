@@ -23,7 +23,6 @@ exports.app =
 	 	require("./jsgi/redirect-root").RedirectRoot( 
 		 	// main Pintura handler
 			function(request){
-				print("request" + request);
 				return pinturaApp(request);
 			}
 		);
