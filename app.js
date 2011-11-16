@@ -3,8 +3,8 @@
  */
 var pageFacets = require("./facet/page"),
 	pageChangeFacets = require("./facet/page-change"),
-	admins = require("commonjs-utils/settings").security.admins,
-	copy = require("commonjs-utils/copy").copy,
+	admins = require("perstore/util/settings").security.admins,
+	copy = require("perstore/util/copy").copy,
 	Restrictive = require("perstore/facet").Restrictive,
 	FileSystem = require("perstore/store/filesystem").FileSystem, 
 	File = require("pintura/media").getFileModel(),

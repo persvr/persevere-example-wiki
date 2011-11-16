@@ -1,5 +1,5 @@
 define(function(require){
-var JSON = require("commonjs-utils/json"),
+var JSON = require("pintura/util/json"),
 	request = require("promised-io/http-client").request;
 	
 //pageName = typeof pageName === "undefined" ? decodeURIComponent(location.pathname.match(/[^\/]*$/)[0]) : pageName;

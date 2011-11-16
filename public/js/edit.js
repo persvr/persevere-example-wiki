@@ -1,5 +1,5 @@
 define(function(require){
-var JSON = require("commonjs-utils/json");
+var JSON = require("pintura/util/json");
 
 pageName = location.search.match(/page=([^&]+)/);
 pageName = decodeURIComponent(pageName && pageName[1]);

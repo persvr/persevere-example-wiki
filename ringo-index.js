@@ -4,7 +4,7 @@
 
 var pinturaApp =	// the main app
 		require("pintura/pintura").app,
-	settings = require("commonjs-utils/settings");
+	settings = require("perstore/util/settings");
 require("./app");
 
 if(require.main == module){

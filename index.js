@@ -1,9 +1,8 @@
 // helpful for debugging
 var pinturaApp,
-	settings = require("commonjs-utils/settings"),
+	settings = require("perstore/util/settings"),
 	Static = require("pintura/jsgi/static").Static,
-	start = require("pintura/start-node").start,
-	multiNode = require("multi-node/multi-node");
+	start = require("pintura/start-node").start;
 function setPinturaApp(){
 	pinturaApp = require("pintura/pintura").app;
 	require("./app");
@@ -18,19 +17,17 @@ start(
 		// cascade from static to pintura REST handling
 			// the main place for static files accessible from the web
 			Static({urls:["/public"], root: "public", directoryListing: true}),
-			Static({urls:["/packages"], root: "/c/packages", directoryListing: true}),
-			Static({urls:["/explorer"], root: require("nodules").getCachePath("persevere-client/") + "/explorer"}),
+			Static({urls:["/packages"], root: require.resolve("pintura/pintura").replace(/pintura[\\\/]pintura.js$/,''), directoryListing: true}),
+//			Static({urls:["/explorer"], root: require.resolve("persevere/persvr").replace(/persvr.js$/,'') + "/explorer"}),
 			// this will provide access to the server side JS libraries from the client
-			require("transporter/jsgi/transporter").Transporter({
-				loader: require("nodules").forBrowser().useLocal().getModuleSource}),
-				// main pintura app
-				function(request){
-					return pinturaApp(request);
-				}
+			pinturaApp
 		])
 	)
 //)
 );
 
+if(require.main == module){
+	require("repl").start();
+}
 // this is just to ensure the static analysis preloads the explorer package
 false&&require("persevere-client/explorer/explorer.js"); 

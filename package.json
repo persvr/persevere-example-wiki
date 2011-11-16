@@ -1,11 +1,10 @@
 {
 	"name": "persevere-example-wiki",
 	"author": "",
-	"version": "0.0.0",
+	"version": "0.0.3",
 	"contributors": [],
 	"mappings":{
 		"perstore": "http://github.com/kriszyp/perstore/zipball/v0.2.4!/",
-		"commonjs-utils": "http://github.com/kriszyp/commonjs-utils/zipball/v0.2.2!/",
 		"pintura": "http://github.com/kriszyp/pintura/zipball/v0.2.6!/",
 		"promised-io": "jar:http://github.com/kriszyp/promised-io/zipball/v0.2.3!/",
 		"templify": "http://github.com/dmachi/templify/zipball/master",
@@ -27,10 +26,9 @@
   	  }
     ],
 	"dependencies": {
-		"pintura": ">=0.2.6",
+		"pintura": ">=0.3.0",
+		"perstore": ">=0.3.0",
 		"promised-io": ">=0.2.2",
-		"commonjs-utils": ">=0.2.2",
-		"multi-node": ">=0.2.3",
 		"wiky": ">=0.95.1"
 	}
 }
