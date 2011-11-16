@@ -29,6 +29,7 @@
 		"pintura": ">=0.3.0",
 		"perstore": ">=0.3.0",
 		"promised-io": ">=0.3.0",
+		"requirejs": ">=1.0.0",
 		"rql": ">=0.3.1",
 		"tunguska": ">=0.3.0",
 		"wiky": ">=0.95.1"
