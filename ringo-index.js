@@ -14,7 +14,7 @@ if(require.main == module){
     	port: settings.port
     });
     server.getContext("/public").serveStatic("public");
-    server.getContext("/packages").serveStatic("C:/packages");
+    server.getContext("/packages").serveStatic(require('pintura/util/packages-dir'));
     server.start();
 	if(settings.repl){
 		require("ringo/shell").start();
