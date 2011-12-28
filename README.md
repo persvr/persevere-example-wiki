@@ -1,11 +1,13 @@
 This is an example Wiki built with Persevere 2.0. It is recommended that you 
-use [Nodules](http://github.com/kriszyp/nodules) on Node to run this example so that
-all dependencies will be automatically resolved, or you can also use the nightly 
-build that bundles with Narwhal. Once installed, you can download this package and from
-the root folder simply run:
+install this package with NPM, so that
+all dependencies will be automatically resolved:
 
-    node /path/to/nodules.js
-    
-or for Narwhal:
+    npm install persevere-example-wiki
 
-    jackup
+And then go into the installed directory and run the index.js to start the wiki:
+
+    cd node_modules/persevere-example-wiki
+    node index.js
+
+See [the Persevere installation instructions](http://persvr.org/Page/Installation) for
+more information on installation or installing on RingoJS.
