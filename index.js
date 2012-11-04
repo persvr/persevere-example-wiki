@@ -27,7 +27,11 @@ start(
 );
 
 if(require.main == module){
-	require("repl").start();
+	require("repl").start({
+		prompt: "node via stdin> ",
+		input: process.stdin,
+		output: process.stdout
+	});
 }
 // this is just to ensure the static analysis preloads the explorer package
 false&&require("persevere-client/explorer/explorer.js"); 
