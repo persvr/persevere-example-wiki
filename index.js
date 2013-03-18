@@ -17,7 +17,8 @@ start(
 		// cascade from static to pintura REST handling
 			// the main place for static files accessible from the web
 			Static({urls:["/public"], root: "public", directoryListing: true}),
-			Static({urls:["/packages"], root: require.resolve("pintura/pintura").replace(/pintura[\\\/]pintura.js$/,''), directoryListing: true}),
+			Static({urls:["/packages"], root: require('pintura/util/packages-dir'), directoryListing: true}),
+			// uncomment this for an optional explorer (needs the persvr package)
 //			Static({urls:["/explorer"], root: require.resolve("persevere/persvr").replace(/persvr.js$/,'') + "/explorer"}),
 			// this will provide access to the server side JS libraries from the client
 			pinturaApp
@@ -26,8 +27,8 @@ start(
 //)
 );
 
-if(require.main == module){
-	require("repl").start();
+if(require.main == module && settings.repl){
+	require("repl").start('persevere>');
 }
 // this is just to ensure the static analysis preloads the explorer package
 false&&require("persevere-client/explorer/explorer.js"); 
