@@ -1,7 +1,7 @@
 {
 	"name": "persevere-example-wiki",
 	"author": "",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"contributors": [],
 	"mappings":{
 		"perstore": "http://github.com/kriszyp/perstore/zipball/v0.2.4!/",
@@ -26,10 +26,10 @@
   	  }
     ],
 	"dependencies": {
-		"pintura": ">=0.3.0",
-		"perstore": ">=0.3.0",
-		"promised-io": ">=0.3.0",
-		"requirejs": ">=1.0.0",
+		"pintura": ">=0.3.1",
+		"perstore": ">=0.3.2",
+		"promised-io": ">=0.3.3",
+		"requirejs": ">=2.1.5",
 		"rql": ">=0.3.1",
 		"tunguska": ">=0.3.0",
 		"wiky": ">=0.95.1"
