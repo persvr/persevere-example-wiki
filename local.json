@@ -1,8 +1,8 @@
 {
 	"//": "For production, you would normally want the number of processes to match the number of cores, but for debugging, using 1 is much easier:",
 	"processes": 1,
-	"//": "This is the HTTP port to listen on:",
-	"port": 8080,
+	"//": "This is the HTTP port to listen on (default to the PORT environment variable or 80)",
+	"port": null,
 	"//": "Indicates whether the console should run",
 	"repl": true,
 	"//": "Indicates a TCP/port connection for the console (omit to disable)",

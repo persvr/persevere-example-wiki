@@ -49,7 +49,7 @@ var publicModel = {
 	Page: pageFacets.PublicFacet,
 	PageChange: pageChangeFacets.PublicFacet,
 	User: User,
-	File: Restrictive(File),
+	File: File,
 	Class: Restrictive(ClassModel)
 };
 

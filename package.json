@@ -1,7 +1,7 @@
 {
 	"name": "persevere-example-wiki",
 	"author": "",
-	"version": "0.0.4",
+	"version": "0.2.5",
 	"contributors": [],
 	"mappings":{
 		"perstore": "http://github.com/kriszyp/perstore/zipball/v0.2.4!/",
