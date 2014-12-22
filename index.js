@@ -7,6 +7,7 @@ function setPinturaApp(){
 	pinturaApp = require("pintura/pintura").app;
 	require("./app");
 }
+
 require.reloadable ? require.reloadable(setPinturaApp) : setPinturaApp();
 start(
 	// uncomment this to enable compression with node-compress
